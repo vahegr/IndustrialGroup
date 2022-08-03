@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'images/Zorik_industrial_group.svg' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+    <title>Zorik Industrial Group | {{ article.title }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo-stand-blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+<!--
+
+TemplateMo 551 Stand Blog
+
+https://templatemo.com/tm-551-stand-blog
+
+-->
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="" style="direction: rtl;">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'home_app:home' %}"><h2>industrial group<em>.</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home_app:home' %}">خانه
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about_app:about_us' %}">درباره ما</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'services_app:services' %}">خدمات</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'product_app:products' %}">محصولات</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'article_app:articles' %}">مقالات</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact_app:contactus' %}">تماس با ما</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="heading-page header-text">
+      <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="text-content">
+                <h4>مقاله</h4>
+                <h2>آموزش راه اندازی یک کولر</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- Banner Ends Here -->
+
+
+    <section class="blog-posts grid-system">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="all-blog-posts">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="blog-post">
+                    <div class="blog-thumb">
+                      <video controls>
+                        <source src="{{ article.video.url }}">
+                      </video>
+                    </div>
+                    <div class="down-content">
+                      <h4>{{ article.title }}</h4>
+                      <ul style="font-family: lalezar;" class="post-info">
+                        <li>{{ article.jalali_number }}</li>
+                        <li>  {{ article.hits.count }}بازدید</li>
+                      </ul>
+                      <p style="color: black;font-size: 19px; font-family: Lalezar">{{ article.description }}</p>
+                      <div class="post-options">
+                        <div class="row">
+                          <div class="col-6">
+                            <ul class="post-tags">
+                              <li style="font-family: lalezar; padding-top: 8px;"><a href="{% url 'home_app:home' %}">ZORIK INDUSTRIAL GROUP | گروه صنعتی زوریک</a>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="sidebar">
+              <div class="row">
+
+                <div class="col-lg-12">
+                  <div class="sidebar-item recent-posts">
+                    <div class="sidebar-heading">
+                      <h2>خدمات ثابت</h2>
+                    </div>
+                    <div class="content">
+                      <ul>
+
+                        <li><a href="services.html">
+                          <h5>تعمیرات کولر اتوبوس</h5>
+                        </a></li>
+
+                        <li><a href="services.html">
+                          <h5>نصب کولر اتوبوس</h5>
+                        </a></li>
+
+                        <li><a href="services.html">
+                          <h5>تعمیرات بخاری درجا اتوبوس</h5>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-lg-12">
+                  <div class="sidebar-item recent-posts">
+                    <div class="sidebar-heading">
+                      <h2>سوالات متداول</h2>
+                    </div>
+                    <div class="content">
+                      <ul>
+                        <li><a href="services.html">
+                          <h5>این گروه چه خدماتی ارائه می دهد؟</h5>
+                        </a></li>
+
+                        <li><a href="about.html">
+                          <h5>این گروه چه مدت سابقه کاری دارد؟</h5>
+                        </a></li>
+
+                        <li><a href="post-details.html">
+                          <h5>این گروه چه محصولاتی دارد؟</h5>
+                        </a></li>
+
+                        <li><a href="post-details.html">
+                          <h5>چطور می توانم با این گروه تماس داشته باشم؟</h5>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="social-icons">
+              <li><a href="#">instagram</a></li>
+              <li><a href="#">whatsapp</a></li>
+              <li><a href="contact.html">contact us</a></li>
+              <li><a href="about.html">about us</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-12">
+            <div class="copyright-text">
+              <div class="logo">
+                <img src="{% static 'images/Zorik_industrial_group2.svg' %}" alt="گروه صنعتی زوریک">
+                <p>
+                  ZORIK INDUSTRIAL GROUP<br>
+                  گروه صنعتی زوریک
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/slick.js' %}"></script>
+    <script src="{% static 'js/isotope.js' %}"></script>
+    <script src="{% static 'js/accordions.js' %}"></script>
+
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+
+  </body>
+
+</html>

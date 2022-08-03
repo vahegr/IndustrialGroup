@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'images/Zorik_industrial_group.svg' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+    <title>Zorik Industrial Group | محصولات</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo-stand-blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+<!--
+
+TemplateMo 551 Stand Blog
+
+https://templatemo.com/tm-551-stand-blog
+
+-->
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="" style="direction: rtl;">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'home_app:home' %}"><h2>industrial group<em>.</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home_app:home' %}">خانه
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about_app:about_us' %}">درباره ما</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'services_app:services' %}">خدمات</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'product_app:products' %}">محصولات</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'article_app:articles' %}">مقالات</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact_app:contactus' %}">تماس با ما</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="heading-page header-text">
+      <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="text-content">
+                <h4>محصولات</h4>
+                <h2>به محصولات ما سر بزنید</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- Banner Ends Here -->
+
+
+    <section class="blog-posts grid-system">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="all-blog-posts">
+              <div class="row">
+
+
+                {% for item in pro %}
+                  <div class="col-lg-6">
+                  <div class="blog-post">
+                    <div class="blog-thumb">
+                      <img src="{{ item.coverImage.url }}" alt="{{ item.title }}">
+                    </div>
+                    <div class="down-content">
+                      <a href="{{ item.get_absolute_url }}"><h4 style="font-size: 32px; margin-top: -10px; padding-bottom: 8px;">{{ item.title }}</h4></a>
+                      <h5 style="font-size: 22px; font-family: lalezar;">{{ item.jalali_price }} تومان</h5>
+                      <div class="post-options">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <ul class="post-tags">
+                              <li style="font-family: lalezar; padding-top: 8px;"><a href="{% url 'home_app:home' %}">ZORIK INDUSTRIAL GROUP | گروه صنعتی زوریک</a>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  {% endfor %}
+
+                    <div class="col-lg-12" style="padding-bottom: 50px">
+                        <ul class="page-numbers">
+                            {% if pro.has_previous %}
+                             <li><a href="?page={{ pro.previous_page_number }}"><i class="fa fa-angle-double-left"></i></a></li>
+                            <li><a href="?page={{ pro.previous_page_number }}">{{ pro.previous_page_number }}</a></li>
+                                {% else %}
+                             <li><a href="">0</a></li>
+                            {% endif %}
+                            <li class="active"><a href="?page={{ pro.number }}">{{ pro.number }}</a></li>
+                            {% if pro.has_next %}
+                            <li><a href="?page={{ pro.next_page_number }}">{{ pro.next_page_number }}</a></li>
+                            <li><a href="?page={{ pro.next_page_number }}"><i class="fa fa-angle-double-right"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+
+              </div>
+            </div>
+          </div>
+
+          {% include "includes/sidebar.html" %}
+        </div>
+      </div>
+    </section>
+
+    
+    {% include "includes/footer.html" %}
+
+
+    <!-- Bootstrap core JavaScript -->
+    {% include "includes/scripts.html" %}
+
+  </body>
+</html>

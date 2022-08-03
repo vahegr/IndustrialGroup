@@ -1,0 +1,25 @@
+{% load static %}
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="social-icons">
+              {% for item in footer %}
+                  <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+          </div>
+          <div class="col-lg-12">
+            <div class="copyright-text">
+              <div class="logo">
+                <img src="{% static 'images/Zorik_industrial_group2.svg' %}" alt="گروه صنعتی زوریک">
+                <p>
+                  ZORIK INDUSTRIAL GROUP<br>
+                  گروه صنعتی زوریک
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>

@@ -1,0 +1,14 @@
+asgiref==3.5.0
+Django==4.0.4
+django-cleanup==6.0.0
+django-etc==1.3.1
+django-extensions==3.1.5
+django-hitcount==1.3.5
+django-jalali==6.0.0
+django-jalali-date==1.0.1
+django-render-partial==0.4
+jdatetime==4.1.0
+Pillow==9.1.0
+sqlparse==0.4.2
+tzdata==2022.1
+Unidecode==1.3.4
